@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+         <groupId>com.games.funslot</groupId>
+		<artifactId>FunSlot-parent</artifactId>
+        <relativePath>./pom.xml</relativePath>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>com.games.funslot</groupId>
+    <artifactId>FunSlot</artifactId>
+    <packaging>swf</packaging>
+    <name>${project.artifactId}</name>
+    <description>${project.artifactId}-${project.version}</description>
+	
+	<developers>
+		<developer>
+			<id>ltrofymchuk</id>
+			<name>Leonid Trofimchuk</name>
+			<email>stesel@mail.ru</email>
+			<url>http://stesel.at.ua/</url>
+			<roles>
+				<role>AS3 developer</role>
+			</roles>
+		</developer>
+	</developers>
+	
+	<properties>
+        <flex.sdk.version>4.6.b.23201</flex.sdk.version>
+		<robotlegs-framework.version>2.2.1</robotlegs-framework.version>
+		<flexunit.version>4.0-rc-1</flexunit.version>
+        <!-- Point to standalone flashplayer -->
+        <flex.flashPlayer.command>
+			${basedir}/debugger/flashplayer.exe
+        </flex.flashPlayer.command>
+		<skipTests>false</skipTests>
+    </properties>
+
+   <build>
+        <sourceDirectory>${basedir}/src</sourceDirectory>
+		<testSourceDirectory>${basedir}/src-tests</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.flexmojos</groupId>
+                <artifactId>flexmojos-maven-plugin</artifactId>
+                <version>4.2-beta</version>
+                <extensions>true</extensions>
+                <configuration>
+					<staticLinkRuntimeSharedLibraries>true</staticLinkRuntimeSharedLibraries>
+					<compilerWarnings>
+						<warn-no-constructor>false</warn-no-constructor>
+					</compilerWarnings>
+					<aggregate>true</aggregate>
+					<headlessServer>true</headlessServer>
+					<verboseStacktraces>true</verboseStacktraces>
+					<swfVersion>16</swfVersion>
+					<targetPlayer>${playerglobal.version}</targetPlayer>
+					
+					<coverage>true</coverage>
+					<coverageProvider>cobertura</coverageProvider>
+					<coverageReportFormat>
+						<format>html</format>
+						<format>xml</format>
+					</coverageReportFormat>	
+					
+                    <debug>false</debug>
+                    <as3>true</as3>
+					
+                    <optimize>true</optimize>
+					<dumpConfigAttach>true</dumpConfigAttach>
+					
+					<sourceFile>com/games/funslot/FunSlot.as</sourceFile>
+					
+					<includeTestFiles>
+                        <includeTestFile>com/games/funslot/AllFunSlotTestSuite</includeTestFile>
+                    </includeTestFiles>
+                </configuration>
+				
+				 <dependencies>
+                    <dependency>
+                        <groupId>com.adobe.flex</groupId>
+                        <artifactId>compiler</artifactId>
+                        <version>${flex.sdk.version}</version>
+                        <type>pom</type>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>flex-framework</artifactId>
+            <version>${flex.sdk.version}</version>
+            <type>pom</type>
+        </dependency>
+		
+		<dependency>
+            <groupId>com.games.funslot</groupId>
+            <artifactId>robotlegs-framework</artifactId>
+			<version>${robotlegs-framework.version}</version>
+            <type>swc</type>
+        </dependency>
+		
+		<dependency>
+			<groupId>com.adobe.flexunit</groupId>
+			<artifactId>flexunit</artifactId>
+			<version>${flexunit.version}</version>
+			<type>swc</type>
+			<scope>test</scope>
+		</dependency>
+
+		</dependencies>
+		 <repositories>
+			<repository>
+				<id>flex-mojos-repository</id>
+				<url>http://repository.sonatype.org/content/groups/flexgroup</url>
+			</repository>
+		</repositories>
+
+		<pluginRepositories>
+			<pluginRepository>
+				<id>flex-mojos-plugin-repository</id>
+				<url>http://repository.sonatype.org/content/groups/flexgroup</url>
+			</pluginRepository>
+		</pluginRepositories>
+</project>
