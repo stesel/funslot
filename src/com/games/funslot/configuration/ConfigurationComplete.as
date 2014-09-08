@@ -19,6 +19,7 @@ package com.games.funslot.configuration
 		{
 			eventDispatcher.dispatchEvent(ApplicationEventFactory.procedureStartUpEvent());
 		}
+		
 	}
 
 }

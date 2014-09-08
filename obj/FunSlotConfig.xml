@@ -3,8 +3,6 @@
 <!--Any modifications you make may be lost.-->
 <flex-config>
   <target-player>11.5</target-player>
-  <benchmark>false</benchmark>
-  <static-link-runtime-shared-libraries>true</static-link-runtime-shared-libraries>
   <compiler>
     <define append="true">
       <name>CONFIG::debug</name>
@@ -16,7 +14,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'03.09.2014'</value>
+      <value>'07.09.2014'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -32,18 +30,18 @@
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>D:\Work\Git\FunSlot\src</path-element>
-      <path-element>D:\Work\Git\FunSlot\src-tests</path-element>
-      <path-element>D:\Work\ExternalLibs</path-element>
-      <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
+      <path-element>D:\Work\GitHub\FunSlot\src</path-element>
+      <path-element>D:\Work\GitHub\FunSlot\src-tests</path-element>
+      <path-element>D:\Work\src\Common</path-element>
+      <path-element>C:\Program Files\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
     <library-path append="true">
-      <path-element>D:\Work\Git\FunSlot\lib\robotlegs-framework-v2.2.1.swc</path-element>
-      <path-element>D:\Work\Git\FunSlot\lib\flexunit-4.1.0-8-as3_4.1.0.16076.swc</path-element>
+      <path-element>D:\Work\GitHub\FunSlot\lib\robotlegs-framework-v2.2.1.swc</path-element>
+      <path-element>D:\Work\GitHub\FunSlot\lib\flexunit-4.1.0-8-as3_4.1.0.16076.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>D:\Work\Git\FunSlot\src\com\games\funslot\FunSlot.as</path-element>
+    <path-element>D:\Work\GitHub\FunSlot\src\com\games\funslot\FunSlot.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>

@@ -3,6 +3,7 @@ package com.games.funslot.context
 	import com.games.funslot.configuration.CommandConfiguration;
 	import com.games.funslot.configuration.ConfigurationComplete;
 	import com.games.funslot.configuration.ModelConfiguration;
+	import com.games.funslot.configuration.ServiceConfiguration;
 	import com.games.funslot.configuration.ViewConfiguration;
 	import com.games.funslot.events.factories.ApplicationEventFactory;
 	import flash.display.DisplayObjectContainer;
@@ -24,13 +25,11 @@ package com.games.funslot.context
 		{
 			super();
 			
-			with (super)
-			{	
-				install(MVCSBundle);
-				configure(ModelConfiguration, ViewConfiguration, CommandConfiguration, ConfigurationComplete);
-				configure(new ContextView(contextView));
-				initialize();
-			}
+			install(MVCSBundle);
+			configure(ModelConfiguration, ViewConfiguration, CommandConfiguration, ServiceConfiguration);
+			configure(new ContextView(contextView));
+			configure(ConfigurationComplete);
+			initialize();
 		}
 		
 	}
