@@ -12,20 +12,22 @@ package com.games.funslot.model
 	public class ConfigModel implements IConfigModel 
 	{
 		private const _configURL:String = "../assets/assets.xml";
+		
+		private const _styleURL:String = "../styles/style.xml";
 
 		private var _assetsURLs:Vector.<LoadVO>;
 		
 		[Inject]
 		public var eventDispatcher:IEventDispatcher;
 		
-		public function ConfigModel() 
-		{
-			
-		}
-		
 		public function get configURL():String
 		{
 			return _configURL;
+		}
+		
+		public function get styleURL():String
+		{
+			return _styleURL;
 		}
 		
 		public function get assetsURLs():Vector.<LoadVO>

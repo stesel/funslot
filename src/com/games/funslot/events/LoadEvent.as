@@ -9,6 +9,7 @@ package com.games.funslot.events
 	public class LoadEvent extends Event 
 	{
 		static public const LOAD_IMAGES			:String = "LoadEvent.LOAD_IMAGES";
+		static public const LOAD_STYLE			:String = "LoadEvent.LOAD_STYLE";
 		
 		static public const CONFIG_LOADED		:String = "LoadEvent.CONFIG_LOADED";
 		static public const STYLE_LOADED		:String = "LoadEvent.STYLE_LOADED";

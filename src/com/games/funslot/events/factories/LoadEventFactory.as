@@ -12,6 +12,11 @@ package com.games.funslot.events.factories
 			return new LoadEvent( LoadEvent.LOAD_IMAGES );
 		}
 		
+		static public function procedureLoadStyle():LoadEvent 
+		{
+			return new LoadEvent( LoadEvent.LOAD_STYLE );
+		}
+		
 		static public function procedureConfigLoaded():LoadEvent
 		{
 			return new LoadEvent( LoadEvent.CONFIG_LOADED );

@@ -1,6 +1,8 @@
 package com.games.funslot.model 
 {
 	import com.games.funslot.model.api.IViewHierarchyModel;
+	import com.games.funslot.view.Background;
+	import com.games.funslot.view.InfoPanel;
 	import com.games.funslot.view.SlotBase;
 	import robotlegs.bender.extensions.contextView.ContextView;
 	/**
@@ -13,12 +15,22 @@ package com.games.funslot.model
 		[Inject]
 		public var contextView:ContextView;
 		
-		public function ViewHierarchyModel() 
+		public function addBackground():void
 		{
-			
+			contextView.view.addChild(new Background());
 		}
 		
-		public function addAppication():void
+		public function addInfoPanel():void
+		{
+			contextView.view.addChild(new InfoPanel());
+		}
+		
+		public function addControlPanel():void
+		{
+			contextView.view.addChild(new SlotBase());
+		}
+		
+		public function addSlotBase():void
 		{
 			contextView.view.addChild(new SlotBase());
 		}

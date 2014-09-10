@@ -1,7 +1,7 @@
 package com.games.funslot.service 
 {
 	import com.games.funslot.events.LoadEvent;
-	import com.games.funslot.service.api.ILoaderService;
+	import com.games.funslot.service.api.IAssetProvider;
 	import com.games.funslot.vo.ImageAssetVO;
 	import com.games.funslot.vo.LoadVO;
 	import com.games.funslot.vo.XMLAssetVO;
@@ -19,7 +19,7 @@ package com.games.funslot.service
 	 * ...
 	 * @author Leonid Trofymchuk
 	 */
-	public class LoaderService implements ILoaderService
+	public class AssetProvider implements IAssetProvider
 	{
 		Security.allowDomain("*");
 		
@@ -40,7 +40,7 @@ package com.games.funslot.service
 		[Inject]
 		public var eventDispatcher:IEventDispatcher;
 		
-		public function LoaderService() 
+		public function AssetProvider() 
 		{
 			urlLoader = new URLLoader();
 			urlLoader.addEventListener(Event.COMPLETE, urlLoaderCompleteHandler);
@@ -86,6 +86,11 @@ package com.games.funslot.service
 		public function getXML(id:String):XML
 		{
 			return _xmlAssets[id];
+		}
+		
+		public function getImage(id:String):Bitmap
+		{
+			return _imageAssets[id];
 		}
 		
 		private function loadXMLQueue():void 
@@ -153,12 +158,33 @@ package com.games.funslot.service
 		
 		private function loaderErrorHandler(e:IOErrorEvent):void 
 		{
-			trace.apply(this, ["LoaderService:: IO ERROR"]);
+			trace.apply(this, ["AssetProvider:: IO ERROR"]);
 		}
 		
 		private function securityErrorHandler(e:SecurityErrorEvent):void 
 		{
-			trace.apply(this, ["LoaderService:: SECURITY ERROR"]);
+			trace.apply(this, ["AssetProvider:: SECURITY ERROR"]);
+		}
+		
+		public function destroy():void
+		{
+			urlLoader.removeEventListener(Event.COMPLETE, urlLoaderCompleteHandler);
+			urlLoader.removeEventListener(IOErrorEvent.IO_ERROR, loaderErrorHandler);
+			urlLoader.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+			urlLoader = null;
+            
+			loader.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaderCompleteHandler);
+			loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR, loaderErrorHandler);
+			loader.contentLoaderInfo.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+			loader = null;
+			
+			_xmlLoadQueue.length = 0;
+			_imageLoadQueue.length = 0;
+			
+			_xmlAssets = null;
+			_imageAssets = null;
+			
+			_currentEvent = null;
 		}
 		
 	}

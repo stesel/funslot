@@ -1,5 +1,9 @@
 package com.games.funslot.configuration 
 {
+	import com.games.funslot.view.api.IBackground;
+	import com.games.funslot.view.api.IInfoPanel;
+	import com.games.funslot.view.mediators.BackgroundMediator;
+	import com.games.funslot.view.mediators.InfoPanelMediator;
 	import com.games.funslot.view.mediators.SlotBaseMediator;
 	import com.games.funslot.view.SlotBase;
 	import robotlegs.bender.extensions.contextView.ContextView;
@@ -19,11 +23,11 @@ package com.games.funslot.configuration
 		
 		public function configure():void
 		{
-			// Create a SlotBaseMediator for each SlotBase
+			// Create Mediators for each Views
 			// that lands inside of the Context View
-			mediatorMap.map(SlotBase).toMediator(SlotBaseMediator);
-			
-			//contextView.view.addChild(new SlotBase());
+			mediatorMap.map(IBackground).toMediator(BackgroundMediator);
+			mediatorMap.map(IInfoPanel).toMediator(InfoPanelMediator);
+
 		}
 		
 	}

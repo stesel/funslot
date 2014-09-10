@@ -1,7 +1,7 @@
 package com.games.funslot.configuration 
 {
-	import com.games.funslot.service.api.ILoaderService;
-	import com.games.funslot.service.LoaderService;
+	import com.games.funslot.service.api.IAssetProvider;
+	import com.games.funslot.service.AssetProvider;
 	import robotlegs.bender.framework.api.IConfig;
 	import robotlegs.bender.framework.api.IInjector;
 	/**
@@ -17,7 +17,7 @@ package com.games.funslot.configuration
 		public function configure():void
 		{
 			// Map Services as a context enforced singletons
-			injector.map(ILoaderService).toSingleton(LoaderService);
+			injector.map(IAssetProvider).toSingleton(AssetProvider);
 		}
 	}
 

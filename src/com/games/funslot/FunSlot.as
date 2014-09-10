@@ -11,7 +11,7 @@ package com.games.funslot
 	 * @author Leonid Trofymchuk
 	 */
 	
-	[SWF(width="800", height="600", backgroundColor="#000000", frameRate="30")]
+	[SWF(width="960", height="580", backgroundColor="#000000", frameRate="30")]
 	public class FunSlot extends Sprite 
 	{
 		private var context:FunSlotContext;
@@ -29,6 +29,15 @@ package com.games.funslot
 			stage.align = StageAlign.TOP_LEFT;
 			
 			context = new FunSlotContext(this);
+			
+			addEventListener(Event.REMOVED_FROM_STAGE, destroy);
+		}
+		
+		private function destroy(e:Event = null):void 
+		{
+			removeEventListener(Event.REMOVED_FROM_STAGE, destroy);
+            context.destroy();
+			context = null;
 		}
 		
 	}

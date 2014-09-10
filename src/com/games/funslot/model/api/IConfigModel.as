@@ -8,9 +8,12 @@ package com.games.funslot.model.api
 	public interface IConfigModel 
 	{
 		function get configURL():String;
+		function  get styleURL():String;
 		function get assetsURLs():Vector.<LoadVO>;
 		
 		function parseConfigXML(xml:XML):void;
+		
+		
 		
 	}
 	

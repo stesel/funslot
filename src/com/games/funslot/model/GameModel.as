@@ -9,11 +9,6 @@ package com.games.funslot.model
 	{
 		private var _balance:Number = 0;
 		
-		public function GameModel() 
-		{
-			
-		}
-		
 		public function get balance():Number
 		{
 			return _balance;

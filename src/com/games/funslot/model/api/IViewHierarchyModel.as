@@ -7,7 +7,13 @@ package com.games.funslot.model.api
 	 */
 	public interface IViewHierarchyModel 
 	{
-		function addAppication():void;
+		function addBackground():void;
+		
+		function addInfoPanel():void;
+		
+		function addControlPanel():void;
+		
+		function addSlotBase():void;
 	}
 	
 }
