@@ -37,7 +37,7 @@ package com.games.funslot.view.decorators
 			format.font = _style.textFont;
 			format.size = _style.textSize;
 			format.color = _style.textColor;
-			format.align = TextFormatAlign.CENTER;
+			format.align = TextFormatAlign.LEFT;
 			format.bold = false;
 			
 			gradientGlow = new GradientGlowFilter();
@@ -48,17 +48,18 @@ package com.games.funslot.view.decorators
 			gradientGlow.ratios = [0, 255]; 
 			gradientGlow.blurX = 2; 
 			gradientGlow.blurY = 2; 
-			gradientGlow.strength = 2;
+			gradientGlow.strength = 3;
 			gradientGlow.quality = BitmapFilterQuality.HIGH;
 			gradientGlow.type = BitmapFilterType.OUTER;
 			
-			for each (var textFields:TextField in _textFields)
+			for each (var textField:TextField in _textFields)
 			{
-				textFields.autoSize = TextFieldAutoSize.LEFT;
-				textFields.antiAliasType = AntiAliasType.ADVANCED;
-				textFields.setTextFormat(format);
-				textFields.defaultTextFormat = format;
-				textFields.filters = [gradientGlow];
+				textField.autoSize = TextFieldAutoSize.LEFT;
+				textField.defaultTextFormat = format;
+				textField.selectable = false;
+				textField.multiline = false;
+				textField.wordWrap = false;
+				textField.filters = [gradientGlow];
 			}
 		}
 		

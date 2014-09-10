@@ -8,6 +8,9 @@ package com.games.funslot.events
 	 */
 	public class SpinEvent extends Event 
 	{
+		static public const ENABLE_SPIN		:String = "SpinEvent.ENABLE_SPIN";
+		static public const DISABLE_SPIN	:String = "SpinEvent.DISABLE_SPIN";
+		
 		static public const START_SPIN		:String = "SpinEvent.START_SPIN";
 		
 		public function SpinEvent(type:String) 

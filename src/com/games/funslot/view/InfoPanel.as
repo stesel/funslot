@@ -20,9 +20,12 @@ package com.games.funslot.view
 		private var decorator:InfoPanelDecorator;
 		
 		private var position:Dictionary;
-		private const cashTextFieldX	:int = 0;
-		private const winTextFieldX		:int = 425;
-		private const betTextFieldX		:int = 665;
+		
+		private const cashTextFieldX	:int = 186;
+		private const winTextFieldX		:int = 428;
+		private const betTextFieldX		:int = 670;
+		
+		private const textFieldY		:int = 2;
 		
 		public function InfoPanel() 
 		{
@@ -37,6 +40,7 @@ package com.games.funslot.view
 			cashTextField.x = cashTextFieldX;
 			winTextField.x = winTextFieldX;
 			betTextField.x = betTextFieldX;
+			cashTextField.y = winTextField.y = betTextField.y = textFieldY;
 			
 			position = new Dictionary();
 			
@@ -63,14 +67,13 @@ package com.games.funslot.view
 		
 		public function updateBet(value:String):void
 		{
-			
 			updateTextField(betTextField, value);
 		}
 		
 		private function updateTextField(textField:TextField, value:String):void
 		{
 			textField.text = value;
-			textField.x = position[textField];
+			textField.x = position[textField] - (textField.width >> 1);
 		}
 		
 		public function destroy():void

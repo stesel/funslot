@@ -7,6 +7,16 @@ package com.games.funslot.events.factories
 	 */
 	public class SpinEventFactory 
 	{
+		static public function procedureEnableSpinEvent():SpinEvent
+		{
+			return new SpinEvent( SpinEvent.ENABLE_SPIN );
+		}
+		
+		static public function procedureDisableSpinEvent():SpinEvent
+		{
+			return new SpinEvent( SpinEvent.DISABLE_SPIN );
+		}
+		
 		static public function procedureStartSpinEvent():SpinEvent
 		{
 			return new SpinEvent( SpinEvent.START_SPIN );

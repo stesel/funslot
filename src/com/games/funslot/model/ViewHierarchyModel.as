@@ -2,6 +2,7 @@ package com.games.funslot.model
 {
 	import com.games.funslot.model.api.IViewHierarchyModel;
 	import com.games.funslot.view.Background;
+	import com.games.funslot.view.ControlPanel;
 	import com.games.funslot.view.InfoPanel;
 	import com.games.funslot.view.SlotBase;
 	import robotlegs.bender.extensions.contextView.ContextView;
@@ -27,7 +28,7 @@ package com.games.funslot.model
 		
 		public function addControlPanel():void
 		{
-			contextView.view.addChild(new SlotBase());
+			contextView.view.addChild(new ControlPanel());
 		}
 		
 		public function addSlotBase():void

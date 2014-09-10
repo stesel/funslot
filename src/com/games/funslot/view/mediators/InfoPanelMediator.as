@@ -18,16 +18,15 @@ package com.games.funslot.view.mediators
 		public var styleModel:IStyleModel;
 		
 		override public function initialize():void
-		{
-			
-			view.updateCash("CASH:" + String(""));
-			view.updateWin("WIN:" + String(5675067));
-			view.updateBet("BET:" + String(324203));
-			
+		{	
 			view.x = DisplaySettings.HELP_PANEL_X;
 			view.y = DisplaySettings.HELP_PANEL_Y;
 			
 			view.decorate(styleModel);
+			
+			view.updateCash("CASH:" + String(""));
+			view.updateWin("WIN:" + String(5675067));
+			view.updateBet("BET:" + String(324203));
 		}
 		
 		override public function destroy():void
