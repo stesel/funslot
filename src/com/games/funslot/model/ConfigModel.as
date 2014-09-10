@@ -20,6 +20,7 @@ package com.games.funslot.model
 		[Inject]
 		public var eventDispatcher:IEventDispatcher;
 		
+		
 		public function get configURL():String
 		{
 			return _configURL;

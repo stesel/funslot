@@ -28,6 +28,8 @@ package com.games.funslot.configuration
 		{
 			// Execute Commands when Events are dispatched 
 			// is dispatched on the context's Event Dispatcher
+			
+			//Build App
 			commandMap.map(ApplicationEvent.START_UP).toCommand(LaunchAppCommand).once();
 			
 			commandMap.map(LoadEvent.LOAD_IMAGES).toCommand(LoadAssetsCommand).once();
@@ -36,11 +38,11 @@ package com.games.funslot.configuration
 			commandMap.map(LoadEvent.CONFIG_LOADED).toCommand(ParseConfigCommand).once();
 			commandMap.map(LoadEvent.IMAGES_LOADED).toCommand(ProcessAssetsCommand).once();
 			commandMap.map(LoadEvent.STYLE_LOADED).toCommand(ParseStyleCommand).once();
-			commandMap.map(LoadEvent.STYLE_LOADED).toCommand(BuildApplicationUI).once();
+			
+			commandMap.map(ApplicationEvent.BUILD_UI).toCommand(BuildApplicationUI).once();
 			
 			
-			
-			
+			//Gameplay
 			commandMap.map(SpinEvent.START_SPIN).toCommand(StartSpinCommand);
 		}
 	}

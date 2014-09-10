@@ -9,6 +9,7 @@ package com.games.funslot.events
 	public class ApplicationEvent extends Event 
 	{
 		static public const START_UP	:String = "ApplicationEvent.START_UP";
+		static public const BUILD_UI	:String = "ApplicationEvent.BUILD_UI";
 		
 		public function ApplicationEvent(type:String) 
 		{

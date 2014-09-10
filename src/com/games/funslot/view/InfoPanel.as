@@ -1,8 +1,12 @@
 package com.games.funslot.view 
 {
+	import com.games.funslot.model.api.IStyleModel;
 	import com.games.funslot.view.api.IInfoPanel;
+	import com.games.funslot.view.decorators.InfoPanelDecorator;
 	import flash.display.Sprite;
 	import flash.text.TextField;
+	import flash.text.TextFieldAutoSize;
+	import flash.utils.Dictionary;
 	/**
 	 * ...
 	 * @author Leonid Trofymchuk
@@ -13,7 +17,12 @@ package com.games.funslot.view
 		private var winTextField	:TextField;
 		private var betTextField	:TextField;
 		
-		//private var decorator:InfoPanelDecorator;
+		private var decorator:InfoPanelDecorator;
+		
+		private var position:Dictionary;
+		private const cashTextFieldX	:int = 0;
+		private const winTextFieldX		:int = 425;
+		private const betTextFieldX		:int = 665;
 		
 		public function InfoPanel() 
 		{
@@ -24,26 +33,44 @@ package com.games.funslot.view
 			this.addChild(cashTextField);
 			this.addChild(winTextField);
 			this.addChild(betTextField);
+			
+			cashTextField.x = cashTextFieldX;
+			winTextField.x = winTextFieldX;
+			betTextField.x = betTextFieldX;
+			
+			position = new Dictionary();
+			
+			position[cashTextField] = cashTextField.x;
+			position[winTextField] = winTextField.x;
+			position[betTextField] = betTextField.x;
 		}
 		
-		public function decorate(textColor:uint, textFont:String, textSize:int):void
+		public function decorate(styleModel:IStyleModel):void
 		{
-			
+			decorator = new InfoPanelDecorator( Vector.<TextField>([cashTextField, winTextField, betTextField]), styleModel );
+			decorator.apply();
 		}
 		
 		public function updateCash(value:String):void
 		{
-			cashTextField.text = value;
+			updateTextField(cashTextField, value);
 		}
 		
 		public function updateWin(value:String):void
 		{
-			winTextField.text = value;
+			updateTextField(winTextField, value);
 		}
 		
 		public function updateBet(value:String):void
 		{
-			betTextField.text = value;
+			
+			updateTextField(betTextField, value);
+		}
+		
+		private function updateTextField(textField:TextField, value:String):void
+		{
+			textField.text = value;
+			textField.x = position[textField];
 		}
 		
 		public function destroy():void
@@ -56,7 +83,10 @@ package com.games.funslot.view
 			winTextField = null;
 			betTextField = null;
 			
-			//decorator = null;
+			position = null;
+			
+			decorator.destroy();
+			decorator = null;
 		}
 		
 	}

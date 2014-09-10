@@ -13,6 +13,11 @@ package com.games.funslot.events.factories
 			return new ApplicationEvent( ApplicationEvent.START_UP );
 		}
 		
+		static public function procedureBuildUI():ApplicationEvent
+		{
+			return new ApplicationEvent( ApplicationEvent.BUILD_UI );
+		}
+		
 	}
 
 }
