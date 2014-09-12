@@ -55,6 +55,7 @@
   <libraryPaths>
     <element path="lib\robotlegs-framework-v2.2.1.swc" />
     <element path="lib\flexunit-4.1.0-8-as3_4.1.0.16076.swc" />
+    <element path="lib\mockolate-0.12.4-as3.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

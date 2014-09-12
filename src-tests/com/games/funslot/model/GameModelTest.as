@@ -24,7 +24,7 @@ package com.games.funslot.model
 			
 			gameModel.balance = newBalance;
 			
-			assertEquals(newBalance, gameModel.balance);
+			assertEquals("Balance values should be equal", newBalance ,gameModel.balance);
 		}
 		
 		[After]

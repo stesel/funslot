@@ -31,7 +31,8 @@
 	<properties>
         <flex.sdk.version>4.6.b.23201</flex.sdk.version>
 		<robotlegs-framework.version>2.2.1</robotlegs-framework.version>
-		<flexunit.version>4.0-rc-1</flexunit.version>
+		<flexunit.version>4.1.0-8</flexunit.version>
+		<mockolate.version>0.12.4</mockolate.version>
         <!-- Point to standalone flashplayer -->
         <flex.flashPlayer.command>
 			${basedir}/debugger/flashplayer.exe
@@ -113,19 +114,28 @@
 			<type>swc</type>
 			<scope>test</scope>
 		</dependency>
+		  
+		<dependency>
+			<groupId>com.games.funslot</groupId>
+			<artifactId>mockolate</artifactId>
+            <version>${mockolate.version}</version>
+            <type>swc</type>
+            <scope>test</scope>
 
+        </dependency>
+		
 		</dependencies>
 		 <repositories>
 			<repository>
 				<id>flex-mojos-repository</id>
 				<url>http://repository.sonatype.org/content/groups/flexgroup</url>
 			</repository>
-		</repositories>
+	</repositories>
 
-		<pluginRepositories>
-			<pluginRepository>
-				<id>flex-mojos-plugin-repository</id>
-				<url>http://repository.sonatype.org/content/groups/flexgroup</url>
-			</pluginRepository>
-		</pluginRepositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>flex-mojos-plugin-repository</id>
+			<url>http://repository.sonatype.org/content/groups/flexgroup</url>
+		</pluginRepository>
+	</pluginRepositories>
 </project>
