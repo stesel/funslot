@@ -62,11 +62,6 @@ package com.games.funslot.view.mediators
 			view.addBetline(assetProvider.getImage(AssetID.BET_LINE));
 		}
 		
-		private function spinStoped(e:SpinEvent):void 
-		{
-			eventDispatcher.dispatchEvent( SpinEventFactory.procedureSpinStopedEvent() );
-		}
-		
 		override public function destroy():void
 		{
 			view.destroy();

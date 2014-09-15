@@ -7,7 +7,6 @@ package com.games.funslot.configuration
 	import com.games.funslot.controller.ParseConfigCommand;
 	import com.games.funslot.controller.ParseStyleCommand;
 	import com.games.funslot.controller.ProcessAssetsCommand;
-	import com.games.funslot.controller.SpinStopedCommand;
 	import com.games.funslot.controller.StartSpinCommand;
 	import com.games.funslot.controller.StopSpinCommand;
 	import com.games.funslot.events.ApplicationEvent;
@@ -46,7 +45,6 @@ package com.games.funslot.configuration
 			//Gameplay
 			commandMap.map(SpinEvent.START_SPIN).toCommand(StartSpinCommand);
 			commandMap.map(SpinEvent.STOP_SPIN).toCommand(StopSpinCommand);
-			commandMap.map(SpinEvent.SPIN_STOPED).toCommand(SpinStopedCommand);
 		}
 	}
 
