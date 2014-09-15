@@ -17,7 +17,7 @@ package com.games.funslot
 		private var context:FunSlotContext;
 		
 		public function FunSlot():void 
-		{
+		{		
 			stage ? init() : addEventListener(Event.ADDED_TO_STAGE, init);
 		}
 		
@@ -28,8 +28,13 @@ package com.games.funslot
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;
 			
-			context = new FunSlotContext(this);
+			initContext();
 			
+		}
+		
+		private function initContext():void 
+		{
+			context = new FunSlotContext(this);
 			addEventListener(Event.REMOVED_FROM_STAGE, destroy);
 		}
 		

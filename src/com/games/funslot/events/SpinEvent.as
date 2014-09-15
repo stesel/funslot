@@ -12,6 +12,8 @@ package com.games.funslot.events
 		static public const DISABLE_SPIN	:String = "SpinEvent.DISABLE_SPIN";
 		
 		static public const START_SPIN		:String = "SpinEvent.START_SPIN";
+		static public const STOP_SPIN		:String = "SpinEvent.STOP_SPIN";
+		static public const SPIN_STOPED		:String = "SpinEvent.SPIN_STOPED";
 		
 		public function SpinEvent(type:String) 
 		{

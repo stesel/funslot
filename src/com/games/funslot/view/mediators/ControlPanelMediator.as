@@ -44,7 +44,6 @@ package com.games.funslot.view.mediators
 		private function startSpin(e:SpinEvent):void 
 		{
 			eventDispatcher.dispatchEvent( SpinEventFactory.procedureStartSpinEvent() );
-			view.disable();
 		}
 		
 		override public function destroy():void

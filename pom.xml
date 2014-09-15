@@ -16,8 +16,9 @@
     </properties>
 	
 	 <modules>
-		<module>robotlegs-framework.pom.xml</module>
+		<module>flexunit.pom.xml</module>
 		<module>mockolate.pom.xml</module>
+		<module>robotlegs-framework.pom.xml</module>
 		<module>FunSlot.pom.xml</module>
     </modules>
 	

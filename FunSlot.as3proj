@@ -4,7 +4,7 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="bin\FunSlot.swf" />
+    <movie path="bin\FunSlot-1.0.swf" />
     <movie fps="30" />
     <movie width="800" />
     <movie height="600" />
@@ -43,7 +43,7 @@
     <option linkReport="" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="-define CONFIG::debug true" />
+    <option additional="-define CONFIG::debug true&#xA;-define CONFIG::local true" />
     <option compilerConstants="" />
     <option minorVersion="" />
   </build>
@@ -54,8 +54,8 @@
   <!-- SWC Libraries -->
   <libraryPaths>
     <element path="lib\robotlegs-framework-v2.2.1.swc" />
-    <element path="lib\flexunit-4.1.0-8-as3_4.1.0.16076.swc" />
     <element path="lib\mockolate-0.12.4-as3.swc" />
+    <element path="lib\flexunit-4.2.0-20140410-as3_4.12.0.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

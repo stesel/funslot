@@ -7,6 +7,7 @@ package com.games.funslot.events
 	 */
 	public class GameEvent extends Event
 	{	
+		static public const GAME_MODEL_UPDATED:String = "GameEvent.GAME_MODEL_UPDATED";
 		
 		public function GameEvent(type:String)  
 		{

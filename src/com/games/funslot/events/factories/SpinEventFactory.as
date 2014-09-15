@@ -22,6 +22,16 @@ package com.games.funslot.events.factories
 			return new SpinEvent( SpinEvent.START_SPIN );
 		}
 		
+		static public function procedureStopSpinEvent():SpinEvent
+		{
+			return new SpinEvent( SpinEvent.STOP_SPIN );
+		}
+		
+		static public function procedureSpinStopedEvent():SpinEvent
+		{
+			return new SpinEvent( SpinEvent.SPIN_STOPED );
+		}
+		
 	}
 
 }

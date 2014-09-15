@@ -6,7 +6,6 @@ package com.games.funslot.view
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.events.TimerEvent;
-	import flash.utils.Dictionary;
 	import flash.utils.Timer;
 	
 	/**
@@ -18,12 +17,12 @@ package com.games.funslot.view
 		private var enabledAsset:Bitmap;
 		private var disabledAsset:Bitmap;
 		
-		private const assetX:int = 873;
-		private const assetY:int = 267;
+		private const ASSET_X:int = 873;
+		private const ASSET_Y:int = 267;
+		
+		private const ANIMATION_TIME:int = 80; //ms
 		
 		private var buttonContainer:Sprite;
-		
-		private const animationTime:int = 80; //ms
 		
 		private var animationTimer:Timer;
 		
@@ -31,12 +30,15 @@ package com.games.funslot.view
 		{
 			buttonContainer = new Sprite();
 			
-			buttonContainer.x = assetX;
-			buttonContainer.y = assetY;
+			buttonContainer.x = ASSET_X;
+			buttonContainer.y = ASSET_Y;
+			
+			buttonContainer.mouseChildren = true;
+			buttonContainer.buttonMode = true;
 			
 			this.addChild(buttonContainer);
 			
-			animationTimer = new Timer(animationTime, 1);
+			animationTimer = new Timer(ANIMATION_TIME, 1);
 			animationTimer.addEventListener(TimerEvent.TIMER_COMPLETE, onAnimationComplete);
 		}
 		
@@ -57,7 +59,6 @@ package com.games.funslot.view
 		private function clickEnabledAsset(e:MouseEvent):void 
 		{
 			buttonContainer.removeEventListener(MouseEvent.CLICK, clickEnabledAsset);
-			buttonContainer.buttonMode = false;
 			animationTimer.start();
 			buttonContainer.scaleX = buttonContainer.scaleY = 0.95;
 		}
@@ -70,25 +71,22 @@ package com.games.funslot.view
 		
 		public function enable():void
 		{
-			if ( enabledAsset )
-				buttonContainer.addChild(enabledAsset);
+			buttonContainer.addChild(enabledAsset);
 			
-			if ( disabledAsset && buttonContainer.contains(disabledAsset) )
+			if ( buttonContainer.contains(disabledAsset) )
 				buttonContainer.removeChild(disabledAsset);	
 				
-			buttonContainer.buttonMode = true;
+			buttonContainer.mouseEnabled = true;
 			buttonContainer.addEventListener(MouseEvent.CLICK, clickEnabledAsset);
 		}
 		
 		public function disable():void
 		{
-			if ( disabledAsset )
-				buttonContainer.addChild(disabledAsset);
+			buttonContainer.addChild(disabledAsset);
 			
-			if ( enabledAsset && buttonContainer.contains(enabledAsset) )
+			if ( buttonContainer.contains(enabledAsset) )
 				buttonContainer.removeChild(enabledAsset);
-				
-			buttonContainer.buttonMode = false;
+			buttonContainer.mouseEnabled = false;	
 			buttonContainer.removeEventListener(MouseEvent.CLICK, clickEnabledAsset);
 		}
 		

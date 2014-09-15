@@ -30,8 +30,9 @@
 	
 	<properties>
         <flex.sdk.version>4.6.b.23201</flex.sdk.version>
+        <flexmojos.version>4.2-beta</flexmojos.version>
 		<robotlegs-framework.version>2.2.1</robotlegs-framework.version>
-		<flexunit.version>4.1.0-8</flexunit.version>
+		<flexunit.version>4.2.0</flexunit.version>
 		<mockolate.version>0.12.4</mockolate.version>
         <!-- Point to standalone flashplayer -->
         <flex.flashPlayer.command>
@@ -47,7 +48,7 @@
             <plugin>
                 <groupId>org.sonatype.flexmojos</groupId>
                 <artifactId>flexmojos-maven-plugin</artifactId>
-                <version>4.2-beta</version>
+                <version>${flexmojos.version}</version>
                 <extensions>true</extensions>
                 <configuration>
 					<staticLinkRuntimeSharedLibraries>true</staticLinkRuntimeSharedLibraries>
@@ -74,6 +75,16 @@
 					<dumpConfigAttach>true</dumpConfigAttach>
 					
 					<sourceFile>com/games/funslot/FunSlot.as</sourceFile>
+					<defines>
+                        <property>
+                            <name>CONFIG::debug</name>
+                            <value>false</value>
+                        </property>
+                        <property>
+                            <name>CONFIG::local</name>
+                            <value>false</value>
+                        </property>
+                    </defines>
 					
 					<includeTestFiles>
                         <includeTestFile>com/games/funslot/AllFunSlotTestSuite</includeTestFile>
@@ -101,7 +112,7 @@
         </dependency>
 		
 		<dependency>
-            <groupId>com.games.funslot</groupId>
+            <groupId>robotlegs</groupId>
             <artifactId>robotlegs-framework</artifactId>
 			<version>${robotlegs-framework.version}</version>
             <type>swc</type>
@@ -116,20 +127,19 @@
 		</dependency>
 		  
 		<dependency>
-			<groupId>com.games.funslot</groupId>
+			<groupId>mockolate</groupId>
 			<artifactId>mockolate</artifactId>
             <version>${mockolate.version}</version>
             <type>swc</type>
             <scope>test</scope>
-
         </dependency>
-		
-		</dependencies>
-		 <repositories>
-			<repository>
-				<id>flex-mojos-repository</id>
-				<url>http://repository.sonatype.org/content/groups/flexgroup</url>
-			</repository>
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>flex-mojos-repository</id>
+			<url>http://repository.sonatype.org/content/groups/flexgroup</url>
+		</repository>
 	</repositories>
 
 	<pluginRepositories>

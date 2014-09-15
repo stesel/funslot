@@ -19,6 +19,7 @@ package com.games.funslot.controller
 			viewHierarchyModel.addBackground();
 			viewHierarchyModel.addInfoPanel();
 			viewHierarchyModel.addControlPanel();
+			viewHierarchyModel.addSlotBase();
 		}
 		
 	}

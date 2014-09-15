@@ -21,11 +21,11 @@ package com.games.funslot.view
 		
 		private var position:Dictionary;
 		
-		private const cashTextFieldX	:int = 186;
-		private const winTextFieldX		:int = 428;
-		private const betTextFieldX		:int = 670;
+		private const CASH_TEXT_FIELD_X	:int = 186;
+		private const WIN_TEXT_FIELD_X	:int = 428;
+		private const BET_TEXT_FIELD_X	:int = 670;
 		
-		private const textFieldY		:int = 2;
+		private const TEXT_FIELD_Y		:int = 2;
 		
 		public function InfoPanel() 
 		{
@@ -37,10 +37,10 @@ package com.games.funslot.view
 			this.addChild(winTextField);
 			this.addChild(betTextField);
 			
-			cashTextField.x = cashTextFieldX;
-			winTextField.x = winTextFieldX;
-			betTextField.x = betTextFieldX;
-			cashTextField.y = winTextField.y = betTextField.y = textFieldY;
+			cashTextField.x = CASH_TEXT_FIELD_X;
+			winTextField.x = WIN_TEXT_FIELD_X;
+			betTextField.x = BET_TEXT_FIELD_X;
+			cashTextField.y = winTextField.y = betTextField.y = TEXT_FIELD_Y;
 			
 			position = new Dictionary();
 			
