@@ -22,7 +22,6 @@ package com.games.funslot.utils
 			}
 			
 			return newList;
-			
 		}
 		
 		static public function copyColumn(colomn:Vector.<ImageAssetVO>):Vector.<ImageAssetVO> 
@@ -41,7 +40,6 @@ package com.games.funslot.utils
 			}
 			
 			return newList;
-			
 		}
 	}
 
