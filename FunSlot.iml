@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="Flex" version="4">
-  <component name="FlexBuildConfigurationManager" active="FunSlot">
+  <component name="FlexBuildConfigurationManager" active="funslot">
     <configurations>
-      <configuration name="FunSlot" pure-as="true" main-class="com.games.funslot.FunSlot" output-file="FunSlot.swf" output-folder="$MODULE_DIR$" use-html-wrapper="true" wrapper-template-path="$MODULE_DIR$/html-template">
+      <configuration name="funslot" pure-as="true" main-class="com.games.funslot.FunSlot" output-file="FunSlot.swf" output-folder="$MODULE_DIR$" use-html-wrapper="true" wrapper-template-path="$MODULE_DIR$/html-template">
         <dependencies target-player="11.1">
           <entries>
-            <entry library-id="0cab446c-7bf3-44c8-ab15-9f0c3278e142">
+            <entry library-id="b25492ef-9fe1-4d08-9680-ff84f935f567">
               <dependency linkage="Merged" />
             </entry>
-            <entry library-id="bc263dff-2d08-4b9c-bb48-be1ea77be3c7">
+            <entry library-id="73bc73f9-20e4-4c5d-b04f-ed9f630c6e31">
               <dependency linkage="Merged" />
             </entry>
-            <entry library-id="4f79e403-3ff2-4438-b77b-70a7e7f2412c">
+            <entry library-id="a05bc744-cfc1-49d2-bb22-ea406913e625">
               <dependency linkage="Merged" />
             </entry>
           </entries>
@@ -35,7 +35,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="0cab446c-7bf3-44c8-ab15-9f0c3278e142" />
+        <properties id="b25492ef-9fe1-4d08-9680-ff84f935f567" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/flexunit-4.2.0-20140410-as3_4.12.0.swc!/" />
         </CLASSES>
@@ -45,7 +45,7 @@
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="bc263dff-2d08-4b9c-bb48-be1ea77be3c7" />
+        <properties id="73bc73f9-20e4-4c5d-b04f-ed9f630c6e31" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/mockolate-0.12.4-as3.swc!/" />
         </CLASSES>
@@ -55,7 +55,7 @@
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="4f79e403-3ff2-4438-b77b-70a7e7f2412c" />
+        <properties id="a05bc744-cfc1-49d2-bb22-ea406913e625" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/robotlegs-framework-v2.2.1.swc!/" />
         </CLASSES>
