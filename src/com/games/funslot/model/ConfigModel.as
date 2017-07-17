@@ -11,9 +11,9 @@ package com.games.funslot.model
 	 */
 	public class ConfigModel implements IConfigModel 
 	{
-		private const _configURL:String = "../assets/assets.xml";
+		private const _configURL:String = "assets/assets.xml";
 		
-		private const _styleURL:String = "../styles/style.xml";
+		private const _styleURL:String = "styles/style.xml";
 
 		private var _assetsURLs:Vector.<LoadVO>;
 		

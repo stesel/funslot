@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <assets>
-	<asset name="background"	 url="../assets/bg/BG.png"/>
-	<asset name="buttonSpin"	 url="../assets/buttons/BTN_Spin.png"/>
-	<asset name="buttonSpinD"	 url="../assets/buttons/BTN_Spin_d.png"/>
-	<asset name="betLine"		 url="../assets/lines/Bet_Line.png"/>
-	<asset name="symbol1"		 url="../assets/symbols/SYM1.png"/>
-	<asset name="symbol2"		 url="../assets/symbols/SYM2.png"/>
-	<asset name="symbol3"		 url="../assets/symbols/SYM3.png"/>
-	<asset name="symbol4"		 url="../assets/symbols/SYM4.png"/>
-	<asset name="symbol5"		 url="../assets/symbols/SYM5.png"/>
-	<asset name="symbol6"		 url="../assets/symbols/SYM6.png"/>
+	<asset name="background"	 url="assets/bg/BG.png"/>
+	<asset name="buttonSpin"	 url="assets/buttons/BTN_Spin.png"/>
+	<asset name="buttonSpinD"	 url="assets/buttons/BTN_Spin_d.png"/>
+	<asset name="betLine"		 url="assets/lines/Bet_Line.png"/>
+	<asset name="symbol1"		 url="assets/symbols/SYM1.png"/>
+	<asset name="symbol2"		 url="assets/symbols/SYM2.png"/>
+	<asset name="symbol3"		 url="assets/symbols/SYM3.png"/>
+	<asset name="symbol4"		 url="assets/symbols/SYM4.png"/>
+	<asset name="symbol5"		 url="assets/symbols/SYM5.png"/>
+	<asset name="symbol6"		 url="assets/symbols/SYM6.png"/>
 </assets>

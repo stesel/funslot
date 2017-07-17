@@ -136,7 +136,7 @@ package com.games.funslot.service
 			}
 			catch (e:TypeError)
 			{
-				trace.apply(this, ["XML FILE ERROR"]);
+				trace.apply(this, ["XML FILE ERROR: " + e.toString()]);
             }
 			
 			loadXMLQueue();
@@ -150,7 +150,7 @@ package com.games.funslot.service
 			}
 			catch (e:TypeError)
 			{
-				trace.apply(this, ["IMAGE FILE ERROR"]);
+				trace.apply(this, ["IMAGE FILE ERROR: " + e.toString()]);
             }
 			
 			loadImageQueue();
@@ -158,12 +158,13 @@ package com.games.funslot.service
 		
 		private function loaderErrorHandler(e:IOErrorEvent):void 
 		{
-			trace.apply(this, ["AssetProvider:: IO ERROR"]);
+
+			trace.apply(this, ["AssetProvider:: IO ERROR: " + e.toString()]);
 		}
 		
 		private function securityErrorHandler(e:SecurityErrorEvent):void 
 		{
-			trace.apply(this, ["AssetProvider:: SECURITY ERROR"]);
+			trace.apply(this, ["AssetProvider:: SECURITY ERROR: " + e.toString()]);
 		}
 		
 		public function destroy():void

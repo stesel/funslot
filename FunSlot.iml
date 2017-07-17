@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="FunSlot">
+    <configurations>
+      <configuration name="FunSlot" pure-as="true" main-class="com.games.funslot.FunSlot" output-file="FunSlot.swf" output-folder="$MODULE_DIR$" use-html-wrapper="true" wrapper-template-path="$MODULE_DIR$/html-template">
+        <dependencies target-player="11.1">
+          <entries>
+            <entry library-id="0cab446c-7bf3-44c8-ab15-9f0c3278e142">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="bc263dff-2d08-4b9c-bb48-be1ea77be3c7">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="4f79e403-3ff2-4438-b77b-70a7e7f2412c">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="flex_sdk_4.6" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src-tests" isTestSource="true" />
+    </content>
+    <orderEntry type="jdk" jdkName="flex_sdk_4.6" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="0cab446c-7bf3-44c8-ab15-9f0c3278e142" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/flexunit-4.2.0-20140410-as3_4.12.0.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="bc263dff-2d08-4b9c-bb48-be1ea77be3c7" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/mockolate-0.12.4-as3.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="4f79e403-3ff2-4438-b77b-70a7e7f2412c" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/robotlegs-framework-v2.2.1.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
